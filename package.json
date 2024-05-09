@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "servidor que se encarga de guardar ciertas configuraciones del usuario, etc",
   "main": "app.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "cross-env NODE_ENV=development nodemon ./src/app.js",
+    "start": "cross-env NODE_ENV=production node ./src/app.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,15 @@
   "bugs": {
     "url": "https://github.com/christianLizama/servidor_led/issues"
   },
-  "homepage": "https://github.com/christianLizama/servidor_led#readme"
+  "homepage": "https://github.com/christianLizama/servidor_led#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.3.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
 }
