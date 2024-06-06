@@ -56,10 +56,14 @@ export const eliminarTexto = async (req, res) => {
 export const enviarTexto = async (req, res) => {
   try {
     // Extrae el mensaje de la solicitud HTTP
-    const message = req.body.message;
-
+    const {message,color} = req.body;
+    const jsonMessage = {
+      message: message,
+      color: color,
+    };
+    
     // Envía el mensaje al ESP32
-    sendMessageToESP32(message);
+    sendMessageToESP32(jsonMessage);
 
     // Envía una respuesta HTTP de éxito
     res

@@ -8,6 +8,8 @@ const client = mqtt.connect(`mqtt://${config.mqtt.host}`, { username: config.mqt
 export const sendMessageToESP32 = (message) => {
     // Publicación de un mensaje en el topic deseado
     const topic = config.mqtt.topic;
-    client.publish(topic, message);
+    // Convertir el mensaje a JSON
+    const messageString = JSON.stringify(message);
+    client.publish(topic, messageString);
     console.log(`Mensaje enviado al ESP32 en el topic ${topic}: ${message}`);
 };
