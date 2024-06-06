@@ -9,4 +9,10 @@ export default {
     db: {
         host: process.env.DB_HOST || 'localhost',
     },
+    mqtt: {
+        host: process.env.MQTT_HOST || 'localhost',
+        user: process.env.MQTT_USER || 'user',
+        password: process.env.MQTT_PASS || 'user',
+        topic: process.env.MQTT_TOPIC || 'topic',
+    },
 };
