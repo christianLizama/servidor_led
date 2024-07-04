@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 const { Schema } = mongoose;
 
 const textoSchema = new Schema({
-  usuario: { type: Schema.Types.ObjectId, ref: "Usuario", required: true },
+  usuario: { type: Schema.Types.ObjectId, ref: "Usuario"},
   texto: { type: String, required: true },
   color: { type: String },
   velocidad: {
