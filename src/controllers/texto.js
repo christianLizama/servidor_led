@@ -57,10 +57,13 @@ export const enviarTexto = async (req, res) => {
   try {
     // Extrae el mensaje de la solicitud HTTP
     const {message,color,velocidad} = req.body;
+    //Transformar la velocidad a número
+    const velocidad2 = parseInt(velocidad);
+
     const jsonMessage = {
       message: message,
       color: color,
-      velocidad: velocidad,
+      velocidad: velocidad2,
     };
     
     // Envía el mensaje al ESP32
